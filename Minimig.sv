@@ -49,6 +49,9 @@ module emu
 	// b[1]: user button
 	// b[0]: osd button
 	output  [1:0] BUTTONS,
+
+	// Buzzer
+	output        BUZZER,
 	
 	output [15:0] AUDIO_L,
 	output [15:0] AUDIO_R,
@@ -456,6 +459,9 @@ minimig minimig
 	.dsr          (UART_DSR         ), // RS232 Data Set Ready
 	.cd           (UART_DSR         ), // RS232 Carrier Detect
 	.ri           (1                ), // RS232 Ring Indicator
+
+    //buzzer
+	.drv_snd      (BUZZER           ), // Pin del Buzzer
 
 	//I/O
 	._joy1        (~JOY0            ), // joystick 1 [fire4,fire3,fire2,fire,up,down,left,right] (default mouse port)
